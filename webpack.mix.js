@@ -15,3 +15,9 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);
+
+mix.copy('/Users/romeritocampos/HD/workspace/php/curriculo/node_modules/startbootstrap-resume/dist/css',
+	'public/resume/css');
+
+mix.copy('/Users/romeritocampos/HD/workspace/php/curriculo/node_modules/startbootstrap-resume/dist/js',
+	'public/resume/js');

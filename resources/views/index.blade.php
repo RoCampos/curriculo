@@ -1,0 +1,2 @@
+@extends('sitelayout.layout')
+
