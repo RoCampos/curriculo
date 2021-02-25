@@ -25,7 +25,7 @@ class CurriculoFactory extends Factory
         return [
             'sobre' => $this->faker->realText(100),
             'interesses' => $this->faker->realText(50),
-            'user' => User::inRandomOrder()->first()->id,
+            'user_id' => User::inRandomOrder()->first()->id,
         ];
     }
 }

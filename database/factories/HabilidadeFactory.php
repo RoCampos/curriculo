@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\Habilidade;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use app\Models\Curriculo;
+
 class HabilidadeFactory extends Factory
 {
     /**
@@ -22,7 +24,8 @@ class HabilidadeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'descricao' => $this->faker->realText('15'),
+            'curriculo_id' => Curriculo::inRandomOrder()->first()->id
         ];
     }
 }
