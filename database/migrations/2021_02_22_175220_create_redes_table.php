@@ -20,11 +20,11 @@ class CreateRedesTable extends Migration
             $table->string('nome');
             $table->string('link');
 
-            $table->UnsignedBigInteger('user');
+            $table->UnsignedBigInteger('user_id');
 
 
             //pra indicar chave estrangeira
-            $table->foreign('user')
+            $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
 
