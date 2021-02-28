@@ -17,11 +17,10 @@ class CreateCommentsTable extends Migration
             
             $table->id();
             $table->string('texto');
+            
             $table->UnsignedBigInteger('user_id');
-            
-            $table->UnsignedBigInteger('post_id')
-                ->nullable();
-            
+            $table->UnsignedBigInteger('post_id');
+                            
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');

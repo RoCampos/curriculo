@@ -3,7 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use App\Models\Blog;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
+use Carbon\Carbon;
 
 class PostFactory extends Factory
 {
@@ -22,7 +25,10 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'titulo' => $this->faker->catchPhrase(),
+            'texto' => $this->faker->realText(150),
+            'publicacao' => Carbon::now(),
+            'blog_id' => Blog::inRandomOrder()->first()->id,
         ];
     }
 }
