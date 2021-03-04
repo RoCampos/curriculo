@@ -9,4 +9,15 @@ class Comment extends Model
 {
 	
     use HasFactory;
+
+    public function respostas()
+    {
+        return $this->belongsToMany(Comment::class, 
+        	'comments_comments', 
+        	'comentario', 
+        	'resposta');
+    }
+
+
 }
+

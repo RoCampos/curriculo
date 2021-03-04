@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 
 use App\Models\Rede;
+use App\Models\Curriculo;
 
 class User extends Authenticatable
 {
@@ -44,10 +45,35 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function blogs()
+    public function redes()
     {
-        return $this->hasMany(Blog::class);
+        //return $this->hasMany(Rede::class, 'user_id', 'id');
+        return $this->hasMany(Rede::class);
     }
 
+    public function orkuts() {
+
+        $lista = Rede::where('link', 'orkut')
+            ->where('user_id', $this->id)
+            ->get();
+
+        return $lista;
+    }
+
+    
+
+    public function curriculo()
+    {
+        return $this->hasOne(Curriculo::class);
+    }
 
 }
+
+
+
+
+
+
+
+
+
