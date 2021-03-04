@@ -14,6 +14,10 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('resume/css/styles.css')}}" rel="stylesheet" />
+
+
+        @yield('link')
+
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -35,9 +39,13 @@
             </div>
         </nav>
         <!-- Page Content-->
+        
         <div class="container-fluid p-0">
-            @include('sitelayout.section')
+            
+            @yield('main-content')
+
         </div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -45,5 +53,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{asset('resume/js/scripts.js')}}"></script>
+
+        @yield('script')
     </body>
 </html>
