@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/curriculo/{id}', function(){
+	return view('curriculo.home');
+});
+
+Route::get('/perfil/experiencia/create', function() {
+    return view('perfil.experience.create');
+});
